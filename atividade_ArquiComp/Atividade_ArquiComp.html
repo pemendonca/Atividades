@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #334f62;">
+    <center>
+        <center>
+            <h1 style="
+            text-align: center;
+        display: block;
+        color: rgb(28, 35, 41); 
+        background-color: rgb(136, 102, 70);
+        width: 100%;
+        margin: auto;
+        height: 10vh;"> Maquina de Numericos
+            </h1> <br>
+        </center>
+
+        <footer> <br>
+            <i style="
+            display: block;
+            background-color: aqua;
+            width: auto;
+            margin: 0%;
+            height: 0vh;
+            ">DECIMAL</i> <br>
+        </footer> <br>
+
+        <input id="input_base" type="text" placeholder="Digite o valor em decimal"> <br> <br>
+
+        <select id="base">
+            <option value="Octal">Octal</option>
+            <option value="Hexadecimal">Hexadecimal</option>
+            <option value="Binario">Binario</option>
+        </select> <br> <br>
+
+        <button onclick="converter()">Converter</button>
+
+        <div id="div_octal"></div>
+        <div id="div_hexadecimal"></div>
+        <div id="div_binaria"></div>
+
+    </center>
+</body>
+
+</html>
+<script>
+
+    function converter() {
+
+        div_octal.innerHTML = ``
+        div_hexadecimal.innerHTML = ``
+        div_binaria.innerHTML = ``
+
+        var decimal = Number(input_base.value);
+        var escolhaDaBase = base.value
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+
+
+        if (escolhaDaBase == "Binario") {
+            document.getElementById("div_binaria").innerHTML = `${binaria}`;
+        }
+        else if (escolhaDaBase == "Octal") {
+            document.getElementById("div_octal").innerHTML = `${octal}`;
+        }
+        else if (escolhaDaBase == "Hexadecimal") {
+            document.getElementById("div_hexadecimal").innerHTML = `${hexadecimal}`;
+        }
+
+        console.log(decimal);
+        console.log(octal);
+        console.log(hexadecimal);
+        console.log(binaria);
+
+
+    }
+</script>
+</body>
+
+</html>
